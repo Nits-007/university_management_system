@@ -32,8 +32,6 @@ from .serializers import (
     StudentTrainingSerializer, UserSerializer
 )
 
-
-
 @api_view(['GET'])
 @permission_classes([IsAuthenticated, IsSuperUser])
 def user_list(request):
@@ -44,16 +42,36 @@ def user_list(request):
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated, IsSuperUser])
 def permission_list(request):
+    
     if request.method == 'GET':
         permissions = UserEntityPermission.objects.all()
         serializer = UserEntityPermissionSerializer(permissions, many=True)
         return Response(serializer.data)
     
     elif request.method == 'POST':
-        serializer = UserEntityPermissionSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        user_id = request.data.get('user')
+        entity_type = request.data.get('entity_type')
+        
+        try:
+            existing_permission = UserEntityPermission.objects.get(
+                user_id=user_id,
+                entity_type=entity_type
+            )
+            serializer = UserEntityPermissionSerializer(
+                existing_permission, 
+                data=request.data,
+                partial=True
+            )
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            
+        except UserEntityPermission.DoesNotExist:
+            serializer = UserEntityPermissionSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
