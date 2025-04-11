@@ -22,9 +22,20 @@ class UserEntityPermissionSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    permissions = serializers.SerializerMethodField()
     class Meta:
         model = User
-        fields = ('id', 'username', 'email')
+        fields = ('id', 'username', 'email', 'is_superuser', 'permissions')
+    def get_permissions(self, obj):
+        permissions = UserEntityPermission.objects.filter(user=obj)
+        return {
+            perm.entity_type: {
+                'can_view': perm.can_view,
+                'can_create': perm.can_create,
+                'can_edit': perm.can_edit,
+                'can_delete': perm.can_delete
+            } for perm in permissions
+        }
 
 class UserProfileSerializer(serializers.ModelSerializer):
     permissions = serializers.SerializerMethodField()
