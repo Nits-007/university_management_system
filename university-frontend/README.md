@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# 🎓 University Management System Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and scalable University Management System built using **React.js**. This system allows university admins to efficiently manage operations like student/staff records, department data, and more — all with role-based access control.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Project Description
 
-### `npm start`
+This frontend project is designed to work as part of a larger University Management System. It focuses on the user interface and client-side functionalities, enabling smooth interaction with the backend APIs. The system supports multiple user roles and enables CRUD operations on various entities like students, staff, departments, courses, hostels, libraries, and more.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Technologies Used
 
-### `npm test`
+- **React.js**
+- **Redux Toolkit (RTK Query)** – For API data fetching and state management
+- **React Router** – For dynamic routing
+- **JWT (JSON Web Tokens)** – For authentication
+- **Tailwind CSS / CSS Modules** – For responsive and modern UI
+  
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Key Features
 
-### `npm run build`
+- 🔐 **Authentication System**
+  - Login and Signup functionality
+  - JWT-based secure login
+  - Persistent user session
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🧑‍💼 **Dual Power Users**
+  - **DBA (Database Admin)**: Has full access to all data, including user permission management
+  - **Staff User**: Can only access granted modules or functionalities
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ⚙️ **Role-Based Access Control**
+  - Dynamic permission management per user
+  - Admin can grant/restrict access to any CRUD operation on any entity
+  - Access toggles for `can_view`, `can_create`, `can_edit`, and `can_delete`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 📊 **Data Management**
+  - Dynamic forms and tables based on schema
+  - Inter-table relationships supported (e.g., Student belongs to Department)
+  - Smart dropdowns for foreign key references
+  - CRUD operations: Create, Read, Update, Delete
 
-### `npm run eject`
+- 🧩 **Modular Architecture**
+  - Component-based structure
+  - Schema-driven table and form rendering
+  - Easily extendable for new entities
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 🔄 **Auto Fetch & Update**
+  - Tables auto-refresh after data operations
+  - Inline error handling and alerts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ How to Install and Run the Project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# Step 1: Clone the repository
+git clone https://github.com/kumar09sahil/university-frontend.git
 
-## Learn More
+# Step 2: Navigate into the project directory
+cd university-frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Step 3: Install dependencies
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Step 4: Run the application
+npm run start
