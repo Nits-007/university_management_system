@@ -1,0 +1,3 @@
+[submodule "university-frontend"]
+	path = university-frontend
+	url = https://github.com/kumar09sahil/university-frontend.git
