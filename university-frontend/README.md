@@ -68,7 +68,7 @@ npm install
 # Step 4: Run the application
 npm run start
 
----
+```
 
 ## Project Demonstration
 
