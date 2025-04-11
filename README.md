@@ -1,6 +1,6 @@
 # 🎓 University Management System Frontend
 
-A modern and scalable University Management System built using **React.js**. This system allows university admins to efficiently manage operations like student/staff records, department data, and more — all with role-based access control.
+A modern and scalable University Management System built using  **Django Rest Framework** and **React.js**. This system allows university admins to efficiently manage operations like student/staff records, department data, and more — all with role-based access control.
 
 ---
 
@@ -8,16 +8,6 @@ A modern and scalable University Management System built using **React.js**. Thi
 
 This frontend project is designed to work as part of a larger University Management System. It focuses on the user interface and client-side functionalities, enabling smooth interaction with the backend APIs. The system supports multiple user roles and enables CRUD operations on various entities like students, staff, departments, courses, hostels, libraries, and more.
 
----
-
-## 🚀 Technologies Used
-
-- **React.js**
-- **Redux Toolkit (RTK Query)** – For API data fetching and state management
-- **React Router** – For dynamic routing
-- **JWT (JSON Web Tokens)** – For authentication
-- **Tailwind CSS / CSS Modules** – For responsive and modern UI
-  
 ---
 
 ## ✨ Key Features
