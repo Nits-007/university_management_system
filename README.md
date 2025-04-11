@@ -1,4 +1,4 @@
-# 🎓 University Management System Frontend
+# 🎓 University Management System 
 
 A modern and scalable University Management System built using  **Django Rest Framework** and **React.js**. This system allows university admins to efficiently manage operations like student/staff records, department data, and more — all with role-based access control.
 
