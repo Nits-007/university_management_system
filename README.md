@@ -10,10 +10,14 @@ Open the terminal in the root directory
     
 Run all these commands in terminal
     
-pip install -r requirements.txt   => Installs all the required dependencies
+pip install -r requirements.txt (Installs all the required dependencies)
+
 python manage.py makemigrations
+
 python manage.py migrate
-python manage.py createsuperuser  => To create the superuser (Database Administrator) => give username as "dbadmin" and password as "admin123"
-python manage.py runserver   => This will run the backend on your local host now copy that link
+
+python manage.py createsuperuser  (To create the superuser (Database Administrator) and give username as "dbadmin" and password as "admin123")
+
+python manage.py runserver   (This will run the backend on your local host now copy that link)
       
       
