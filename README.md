@@ -1,23 +1,85 @@
-This is a website version of the university management system where users can basically manage almost all the data which are required to manage in a university eg: Teachers, Library, Students, etc.
-There will also be a DB Admin who have the power to grant/revoke access to any user to limit his/her control over the data.
+# 🎓 University Management System Frontend
 
-Steps to use the website on your local machine: 
+A modern and scalable University Management System built using **React.js**. This system allows university admins to efficiently manage operations like student/staff records, department data, and more — all with role-based access control.
 
-Clone the repository to your local machine
+---
 
-Steps to run the website
-Open the terminal in the root directory
-    
-Run all these commands in terminal
-    
-pip install -r requirements.txt (Installs all the required dependencies)
+## 📌 Project Description
 
+This frontend project is designed to work as part of a larger University Management System. It focuses on the user interface and client-side functionalities, enabling smooth interaction with the backend APIs. The system supports multiple user roles and enables CRUD operations on various entities like students, staff, departments, courses, hostels, libraries, and more.
+
+---
+
+## 🚀 Technologies Used
+
+- **React.js**
+- **Redux Toolkit (RTK Query)** – For API data fetching and state management
+- **React Router** – For dynamic routing
+- **JWT (JSON Web Tokens)** – For authentication
+- **Tailwind CSS / CSS Modules** – For responsive and modern UI
+  
+---
+
+## ✨ Key Features
+
+- 🔐 **Authentication System**
+  - Login and Signup functionality
+  - JWT-based secure login
+  - Persistent user session
+
+- 🧑‍💼 **Dual Power Users**
+  - **DBA (Database Admin)**: Has full access to all data, including user permission management
+  - **Staff User**: Can only access granted modules or functionalities
+
+- ⚙️ **Role-Based Access Control**
+  - Dynamic permission management per user
+  - Admin can grant/restrict access to any CRUD operation on any entity
+  - Access toggles for `can_view`, `can_create`, `can_edit`, and `can_delete`
+
+- 📊 **Data Management**
+  - Dynamic forms and tables based on schema
+  - Inter-table relationships supported (e.g., Student belongs to Department)
+  - Smart dropdowns for foreign key references
+  - CRUD operations: Create, Read, Update, Delete
+
+- 🧩 **Modular Architecture**
+  - Component-based structure
+  - Schema-driven table and form rendering
+  - Easily extendable for new entities
+
+- 🔄 **Auto Fetch & Update**
+  - Tables auto-refresh after data operations
+  - Inline error handling and alerts
+
+---
+
+## 🛠️ How to Install and Run the Project
+
+```bash
+# Step 1: Clone the repository
+git clone https://github.com/kumar09sahil/university-frontend.git
+
+# Step 2: Navigate into the root directory and open terminal
+Install pip and npm
+
+# Step 3: Install dependencies
+pip install -r requirements.txt
+
+# Step 4: Create the tables
 python manage.py makemigrations
-
 python manage.py migrate
 
-python manage.py createsuperuser  (To create the superuser (Database Administrator) and give username as "dbadmin" and password as "admin123")
+# Step 5: Create the DB Admin
+python manage.py createsuperuser (username : dbadmin , password : admin123)
 
-python manage.py runserver   (This will run the backend on your local host now copy that link)
-      
-      
+# Step 6: Run the backend 
+python manage.py runserver
+
+# Step 7: Navigate into the frontend directory
+cd university-frontend
+
+# Step 8: Install dependencies
+npm install
+
+# Step 9: Run the application
+npm run start
