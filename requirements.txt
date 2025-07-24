@@ -9,3 +9,4 @@ tzdata==2025.2
 whitenoise
 gunicorn
 dj-database-url
+psycopg2-binary
