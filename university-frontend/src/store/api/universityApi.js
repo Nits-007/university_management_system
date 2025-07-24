@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
 const baseQueryWithAuth = fetchBaseQuery({
-  baseUrl: 'https://university-management-system-1-e8yv.onrender.com/api/', // or your backend base URL
+  baseUrl: 'https://university-management-system-2.onrender.com/api/', // or your backend base URL
   prepareHeaders: (headers) => {
     const token = localStorage.getItem('token');
     if (token) {
