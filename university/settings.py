@@ -32,8 +32,8 @@ SECRET_KEY = "django-insecure-@1su*p5k+01!t7q_i3%mp!7&225g1f+o+nm)%-matdev-%ug67
 DEBUG = 'RENDER' not in os.environ
 
 #render
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
 
 # Application definition
@@ -87,12 +87,17 @@ WSGI_APPLICATION = "university.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import dj_database_url
+import os
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("postgresql://uni_mng_db_user:E1IKjmkuZ1KtqPSqRZ4ByA3jQrEwX6TZ@dpg-d216513ipnbc73e108e0-a/uni_mng_db"),
+        conn_max_age=600,
+        ssl_require=True,
+    )
 }
+
 
 
 # Password validation
