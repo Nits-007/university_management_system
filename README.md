@@ -6,7 +6,7 @@ A modern and scalable University Management System built using  **Django Rest Fr
 
 ## 📌 Project Description
 
-This frontend project is designed to work as part of a larger University Management System. It focuses on the user interface and client-side functionalities, enabling smooth interaction with the backend APIs. The system supports multiple user roles and enables CRUD operations on various entities like students, staff, departments, courses, hostels, libraries, and more.
+This is designed to work as part of a larger University Management System. It focuses on the user interface and client-side functionalities, enabling smooth interaction with the backend APIs. The system supports multiple user roles and enables CRUD operations on various entities like students, staff, departments, courses, hostels, libraries, and more.
 
 ---
 
